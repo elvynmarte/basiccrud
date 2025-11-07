@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import BottomNav from "./components/BottomNav";
+import Login from "./screens/Login";
+import Items from "./screens/Items";
+import NewItems from "./screens/NewItem";
+import Users from "./screens/Users";
+import NewUsers from "./screens/NewUser";
+import Types from "./screens/Types";
+import NewType from "./screens/NewType";
+import Profile from "./screens/Profile";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const user =
+    localStorage.getItem("user") != undefined
+      ? JSON.parse(localStorage.getItem("user"))
+      : {};
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="app">
+        <header className="app-header">
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/items" element={<Items />} />
+            <Route path="/new-item" element={<NewItems />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/new-user" element={<NewUsers />} />
+            <Route path="/types" element={<Types />} />
+            <Route path="/new-type" element={<NewType />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </header>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {Object.keys(user).length > 0 && <BottomNav />}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,42 +1,108 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+.app {
+  background-color: #222;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header {
+  background: #060010;
   padding: 2rem;
-  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #512e88;
+  margin-bottom: 0.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn {
+  background-color: #9f4ddf;
+  color: white;
+  border: none;
+  /*padding: 0.75rem 1.5rem;*/
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.txt {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #512e88;
+  background-color: #000;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: "100%";
 }
 
-.read-the-docs {
-  color: #888;
+.btn:hover {
+  background-color: #6848e7;
+}
+
+.dvparent {
+  flex-direction: "row";
+  display: "flex";
+  margin-bottom: "100px";
+  padding-top: "20px";
+  min-width: "55vh";
+}
+
+.dvchild {
+  width: "50%";
+}
+
+/*to table style*/
+/* Basic Table Structure & Reset */
+table {
+  width: 100%; /* Make the table fill its container */
+  border-radius: 8px;
+  border-collapse: collapse; /* Essential: Merges border lines */
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header Styling */
+th {
+  background-color: #512e88; /* A pleasant, contrasting color */
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px 15px;
+  letter-spacing: 0.5px;
+  border: 1px solid #000;
+}
+
+/* Cell Styling (Header and Data) */
+td {
+  padding: 12px 15px; /* Consistent padding for spaciousness */
+  text-align: left;
+  border: 1px solid #5227ff; /* Light border for separation */
+}
+
+/* Zebra Striping (Alternating row colors for readability) */
+tbody tr:nth-child(even) {
+  background-color: #000; /* Very light gray for even rows */
+}
+
+/* Hover Effect for Interactivity */
+tbody tr:hover {
+  background-color: #6848e781; /* Slightly darker gray on hover */
+  cursor: pointer; /* Indicates interactivity */
+  color: #fff;
+  font-weight: "bold";
 }
